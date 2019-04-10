@@ -8,7 +8,7 @@ if len(sys.argv) != 3:
     print ("[i] Usage example: dumpAnywhere64(\"/Users/GeoSn0w/Desktop/file.bin\", 0xFFFFFF, 64)")
 def dumpAnywhere64(where, address, size):
     extractedBinary = idc.GetManyBytes(address, size)
-    print ("[i] Will extract " + str(size) + " bytes from " + str(address) + " and will save to " + str(where))
+    print ("[i] Will extract " + str(size) + " bytes from " + "0x"+ str(address) + " and will save to " + str(where))
     with open(where, "wb+") as file:
      try:
         file.write(extractedBinary)
